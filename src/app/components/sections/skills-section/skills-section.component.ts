@@ -44,7 +44,7 @@ export class SkillsSectionComponent {
     {
       category: 'Azure Cloud',
       icon: 'database',
-      skills: ['Storage Account', 'SQL DB', 'ML Studio'], //, 'Data Factory', 'DataBricks', 'Synapse Analytics', 'Fabric'
+      skills: ['Storage Account', 'SQL DB', 'ML Studio', 'Data Factory', 'DataBricks', 'Synapse Analytics', 'Fabric'], 
     },
      {
       category: 'Version Control',
