@@ -18,7 +18,9 @@ interface Project {
   styleUrl: './projects-section.component.scss'
 })
 export class ProjectsSectionComponent {
-  projects: Project[] = [
+  selectedFilter: string = 'all'; // 'all', 'DS', '</>'
+  
+  allProjects: Project[] = [
      {
       title: 'Portfolio Website (MIT Lic.)',
       description: 'A modern single-page portfolio showcasing projects, skills, and experience with a clean, responsive design and smooth user interactions.',
@@ -41,8 +43,40 @@ export class ProjectsSectionComponent {
       technologies: ['Android Native', 'Jetpack', 'Kotlin', 'Firebase', 'SqlLite-Room'],
       image: 'https://placehold.co/600x400',
       type: 'DS',
-      link: 'https://github.com/Vignesh96-R/vignesh-portfolio'
+      link: 'https://github.com/Vignesh96-R/LSTM_predicition'
     },
+    {
+    title: 'AI-Powered Chatbot with NLP',
+    description: 'Built an intelligent chatbot using transformers for intent classification and contextual understanding. Integrated with Rasa and Hugging Face models for accurate dialogue handling.',
+    technologies: ['BERT', 'GPT', 'Transformers', 'Rasa', 'Hugging Face'],
+    image: 'https://placehold.co/600x400',
+    type: 'DS',
+    link: 'https://github.com/Vignesh96-R/chatbot-nlp'
+  },
+  {
+    title: 'End-to-End ML Web App',
+    description: 'Developed a full-stack machine learning app with classification/regression capabilities, deployed using Streamlit and Docker on AWS/GCP for scalable access.',
+    technologies: ['Streamlit', 'FastAPI', 'Docker', 'AWS', 'Python'],
+    image: 'https://placehold.co/600x400',
+    type: 'DS',
+    link: 'https://github.com/Vignesh96-R/ml-web-app'
+  },
+  {
+    title: 'Real-Time Object Detection on Traffic Feeds',
+    description: 'Implemented YOLOv5 with OpenCV to detect and track objects in real-time traffic and CCTV video feeds, achieving low-latency performance in live environments.',
+    technologies: ['YOLOv5', 'OpenCV', 'Python', 'Real-time Streaming'],
+    image: 'https://placehold.co/600x400',
+    type: 'DS',
+    link: 'https://github.com/Vignesh96-R/yolo-object-detection'
+  },
+  {
+  title: 'Stock Price Prediction with LSTM',
+  description: 'Engineered a deep learning model using LSTM networks to forecast stock prices based on historical time-series data. Visualized trends and performance using Matplotlib.',
+  technologies: ['LSTM', 'Time-series', 'TensorFlow', 'Keras', 'Matplotlib'],
+  image: 'https://placehold.co/600x400',
+  type: 'DS',
+  link: 'https://github.com/Vignesh96-R/stock-lstm-prediction'
+}
     // {
     //   title: 'E-commerce Analytics Dashboard',
     //   description: 'A web application for visualizing sales data and predicting customer churn using machine learning.',
@@ -65,6 +99,17 @@ export class ProjectsSectionComponent {
     //   link: '#'
     // }
   ];
+
+  get projects(): Project[] {
+    if (this.selectedFilter === 'all') {
+      return this.allProjects;
+    }
+    return this.allProjects.filter(project => project.type === this.selectedFilter);
+  }
+
+  filterProjects(filter: string): void {
+    this.selectedFilter = filter;
+  }
 
   getExternalLinkIcon(): string {
     // External link icon SVG path

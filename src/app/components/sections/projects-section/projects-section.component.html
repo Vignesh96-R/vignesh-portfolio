@@ -1,6 +1,36 @@
 <section id="projects" class="py-16 md:py-24 bg-background">
   <div class="container mx-auto px-4">
+    <!-- Title centered at top -->
     <h2 class="text-3xl font-headline font-bold text-center mb-12">Projects</h2>
+    
+    <!-- Filter Buttons positioned at right side -->
+    <div class="flex justify-end mb-8">
+      <div class="flex gap-3">
+        <button 
+          (click)="filterProjects('all')" 
+          [class]="selectedFilter === 'all' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+          class="px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm">
+          All Projects
+        </button>
+        <button 
+          (click)="filterProjects('DS')" 
+          [class]="selectedFilter === 'DS' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+          class="px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm flex items-center gap-2">
+          <img src="/favicon.png" alt="Data Science" class="h-4 w-4 object-contain" />
+          Data Science
+        </button>
+        <button 
+          (click)="filterProjects('</>')" 
+          [class]="selectedFilter === '</>' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+          class="px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm flex items-center gap-2">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+          Software Dev
+        </button>
+      </div>
+    </div>
+    
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div *ngFor="let project of projects" class="rounded-xl bg-white shadow p-0 flex flex-col overflow-hidden relative">
         <!-- <img [src]="project.image" alt="Project image" class="w-full h-56 object-cover bg-gray-100"> -->
