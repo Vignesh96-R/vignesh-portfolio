@@ -1,0 +1,32 @@
+<section id="projects" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-headline font-bold text-center mb-12">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let project of projects" class="rounded-xl bg-white shadow p-0 flex flex-col overflow-hidden relative">
+        <!-- <img [src]="project.image" alt="Project image" class="w-full h-56 object-cover bg-gray-100"> -->
+        <!-- Project Type Icon -->
+        <div class="absolute top-4 right-4 z-10">
+          <!-- Show header SVG icon for </> type projects -->
+          <svg *ngIf="project.type === '</>'" class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+          <!-- Show favicon for DS type projects -->
+          <img *ngIf="project.type === 'DS'" src="/favicon.png" alt="Data Science" class="h-6 w-6 object-contain" title="Data Science Project" />
+        </div>
+        <div class="flex-1 flex flex-col p-6">
+          <div class="text-lg font-bold mb-1">{{ project.title }}</div>
+          <div class="text-gray-500 mb-4">{{ project.description }}</div>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span *ngFor="let tech of project.technologies" class="inline-flex items-center rounded-md bg-green-200 px-2.5 py-0.5 text-xs font-medium text-green-800">{{ tech }}</span>
+          </div>
+          <a [href]="project.link" target="_blank" rel="noopener" class="mt-auto w-full inline-flex items-center justify-center rounded-lg bg-gray-100 hover:bg-gray-200 transition text-gray-900 font-medium py-3 px-4 text-base">
+            View Project
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="getExternalLinkIcon()"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

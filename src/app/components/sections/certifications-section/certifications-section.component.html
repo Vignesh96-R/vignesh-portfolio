@@ -1,0 +1,18 @@
+<section id="certifications" class="py-16 md:py-24 bg-[#f5f8f7]">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-headline font-bold text-center mb-12">Certifications</h2>
+    <div class="flex flex-col gap-8 max-w-2xl mx-auto">
+      <div *ngFor="let cert of certifications" class="bg-white rounded-xl shadow p-8 flex gap-4 items-start">
+        <!-- <svg class="w-8 h-8 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="getIconPath()"></path>
+        </svg> -->
+        <img src="/svg/datascience/azure.svg" alt="Azure" class="w-8 h-8 object-contain flex-shrink-0 mt-1" title="Azure" />
+        <div>
+          <div class="text-lg font-bold mb-1">{{ cert.title }}</div>
+          <div class="text-gray-500 mb-2">{{ cert.company }}</div>
+          <div class="text-gray-500">{{ cert.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
