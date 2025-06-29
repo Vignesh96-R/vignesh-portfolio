@@ -54,7 +54,7 @@ export class ProjectsSectionComponent {
     link: 'https://github.com/Vignesh96-R/chatbot-nlp'
   },
   {
-    title: 'Real-Time Object Detection on Traffic Feeds',
+    title: 'Real-Time Object Detection',
     description: 'Implemented YOLOv5 with OpenCV to detect and track objects in real-time traffic and CCTV video feeds, achieving low-latency performance in live environments.',
     technologies: ['YOLOv5', 'OpenCV', 'Python', 'Real-time Streaming'],
     image: 'https://placehold.co/600x400',
@@ -63,8 +63,8 @@ export class ProjectsSectionComponent {
   },
   {
     title: 'End-to-End ML Web App',
-    description: 'Developed a full-stack machine learning app with classification/regression capabilities, deployed using Streamlit and Docker on AWS/GCP for scalable access.',
-    technologies: ['Streamlit', 'FastAPI', 'Docker', 'AWS', 'Python'],
+    description: 'Developed a full-stack machine learning app with classification/regression capabilities, deployed using Streamlit and Docker on Azure for scalable access.',
+    technologies: ['Streamlit', 'FastAPI', 'Docker', 'Azure', 'Python'],
     image: 'https://placehold.co/600x400',
     type: 'DS',
     link: 'https://github.com/Vignesh96-R/ml-web-app'
