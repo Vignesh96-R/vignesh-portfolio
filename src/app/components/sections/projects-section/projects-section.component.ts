@@ -8,6 +8,8 @@ interface Project {
   image: string;
   link: string;
   type: string;
+  status?: 'completed' | 'in-progress' | 'planned';
+  progress?: number; // 0-100 for progress bar
 }
 
 @Component({
@@ -27,7 +29,8 @@ export class ProjectsSectionComponent {
       technologies: ['Angular', 'Tailwind CSS', 'TypeScript'],
       image: 'https://placehold.co/600x400',
       type: '</>',
-      link: 'https://github.com/Vignesh96-R/vignesh-portfolio'
+      link: 'https://github.com/Vignesh96-R/vignesh-portfolio',
+      status: 'completed'
     },
     {
       title: 'File Management App',
@@ -35,7 +38,8 @@ export class ProjectsSectionComponent {
       technologies: ['Android Native', 'Jetpack', 'Kotlin', 'Firebase', 'SqlLite-Room'],
       image: 'https://placehold.co/600x400',
       type: '</>',
-      link: 'https://github.com/Vignesh96-R/CloudMediaBox'
+      link: 'https://github.com/Vignesh96-R/CloudMediaBox',
+      status: 'completed'
     },
     {
       title: 'Stock Price Prediction with LSTM',
@@ -43,7 +47,8 @@ export class ProjectsSectionComponent {
       technologies: ['LSTM', 'Time-series', 'TensorFlow', 'Keras', 'Matplotlib'],
       image: 'https://placehold.co/600x400',
       type: 'DS',
-      link: 'https://github.com/Vignesh96-R/LSTM_predicition'
+      link: 'https://github.com/Vignesh96-R/LSTM_predicition',
+      status: 'completed'
     },
     {
     title: 'AI-Powered Chatbot with NLP',
@@ -51,7 +56,8 @@ export class ProjectsSectionComponent {
     technologies: ['BERT', 'GPT', 'Transformers', 'Rasa', 'Hugging Face'],
     image: 'https://placehold.co/600x400',
     type: 'DS',
-    link: 'https://github.com/Vignesh96-R/chatbot-nlp'
+    link: 'https://github.com/Vignesh96-R/chatbot-nlp',
+    status: 'completed'
   },
   {
     title: 'Real-Time Object Detection',
@@ -59,7 +65,9 @@ export class ProjectsSectionComponent {
     technologies: ['YOLOv5', 'OpenCV', 'Python', 'Real-time Streaming'],
     image: 'https://placehold.co/600x400',
     type: 'DS',
-    link: 'https://github.com/Vignesh96-R/yolo-object-detection'
+    link: 'https://github.com/Vignesh96-R/yolo-object-detection',
+    status: 'in-progress',
+    progress: 75
   },
   {
     title: 'End-to-End ML Web App',
@@ -67,7 +75,8 @@ export class ProjectsSectionComponent {
     technologies: ['Streamlit', 'FastAPI', 'Docker', 'Azure', 'Python'],
     image: 'https://placehold.co/600x400',
     type: 'DS',
-    link: 'https://github.com/Vignesh96-R/ml-web-app'
+    link: 'https://github.com/Vignesh96-R/ml-web-app',
+    status: 'completed'
   },
     // {
     //   title: 'E-commerce Analytics Dashboard',
@@ -101,6 +110,24 @@ export class ProjectsSectionComponent {
 
   filterProjects(filter: string): void {
     this.selectedFilter = filter;
+  }
+
+  getStatusColor(status: string): string {
+    switch (status) {
+      case 'completed': return 'bg-green-100 text-green-800';
+      case 'in-progress': return 'bg-yellow-100 text-yellow-800';
+      case 'planned': return 'bg-blue-100 text-blue-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  }
+
+  getStatusIcon(status: string): string {
+    switch (status) {
+      case 'completed': return 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z';
+      case 'in-progress': return 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z';
+      case 'planned': return 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z';
+      default: return 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z';
+    }
   }
 
   getExternalLinkIcon(): string {

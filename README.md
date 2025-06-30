@@ -30,6 +30,19 @@ npm run build
 npx serve dist/your-app
 ```
 
+# Build Docker image
+docker build -t your-dockerhub-username/your-app:v1 .
+
+# Login to Docker Hub
+docker login
+
+# Push the image
+docker push your-dockerhub-username/your-app:v1
+# Deploy to Kubernetes
+kubectl apply -f deployment.yaml
+# run
+kubectl port-forward angular-frontend 8082:80
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
