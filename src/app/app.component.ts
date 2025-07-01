@@ -8,6 +8,7 @@ import { ExperienceSectionComponent } from './components/sections/experience-sec
 import { ProjectsSectionComponent } from './components/sections/projects-section/projects-section.component';
 import { CertificationsSectionComponent } from './components/sections/certifications-section/certifications-section.component';
 import { ContactSectionComponent } from './components/sections/contact-section/contact-section.component';
+import { CodingProfilesSectionComponent } from './components/sections/coding-profiles-section/coding-profiles-section.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { ContactSectionComponent } from './components/sections/contact-section/c
     ExperienceSectionComponent,
     ProjectsSectionComponent,
     CertificationsSectionComponent,
-    ContactSectionComponent
+    ContactSectionComponent,
+    CodingProfilesSectionComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
