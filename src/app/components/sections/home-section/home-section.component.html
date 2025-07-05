@@ -44,9 +44,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="getIconPath(item.icon)"></path>
             </svg>
             <h3 class="font-headline text-xl font-semibold leading-none tracking-tight">{{ item.title }}</h3>
-            <div class="flex flex-row gap-2 ml-auto">
-              <ng-container *ngFor="let skill of item.skills">
-                <img [src]="skill.svgPath" [alt]="skill.name" class="w-7 h-7 object-contain" title="{{ skill.name }}" />
+            <div class="flex flex-row gap-2 ml-auto" >
+              <ng-container *ngFor="let skill of item.skills" >
+                <img [src]="skill.svgPath" [alt]="skill.name"  class="w-7 h-7 object-contain" title="{{ skill.name }}" />
               </ng-container>
             </div>
           </div>
