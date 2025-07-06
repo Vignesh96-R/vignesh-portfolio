@@ -19,13 +19,6 @@ interface CodingProfile {
 })
 export class CodingProfilesSectionComponent {
   profiles: CodingProfile[] = [
-    // {
-    //   platform: 'LeetCode',
-    //   icon: '/svg/connect/leetcode.svg', // Placeholder, update if you have a LeetCode SVG
-    //   url: '[Your LeetCode URL]',
-    //   stats: '350+ problems solved, mostly in Algorithms & SQL',
-    //   description: 'Actively solving algorithmic and database challenges to strengthen problem-solving skills and prepare for technical interviews.'
-    // },
     {
       platform: 'HackerRank',
       icon: '/hackerrank.png', // Updated to use the actual PNG image
