@@ -7,7 +7,6 @@
           <img [src]="profile.icon" [alt]="profile.platform + ' icon'" class="w-8 h-8 mr-3 object-contain" *ngIf="profile.icon">
           <h3 class="font-headline text-xl font-semibold">{{ profile.platform }}</h3>
         </div>
-   
         <!-- <div class="text-green-700 font-medium mb-2">{{ profile.stats }}</div> -->
         <p class="text-muted-foreground mb-4">{{ profile.description }}</p>
              <div *ngIf="profile.chips" class="flex flex-wrap gap-2 mb-2">
