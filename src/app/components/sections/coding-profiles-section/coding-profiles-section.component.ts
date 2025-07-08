@@ -7,7 +7,7 @@ interface CodingProfile {
   url: string;
   stats: string;
   description: string;
-  chips?: string[]; // Add chips for skills or badges
+  chips?: string[]; 
 }
 
 @Component({
@@ -21,7 +21,7 @@ export class CodingProfilesSectionComponent {
   profiles: CodingProfile[] = [
     {
       platform: 'HackerRank',
-      icon: '/hackerrank.png', // Updated to use the actual PNG image
+      icon: '/hackerrank.png', 
       url: 'https://www.hackerrank.com/profile/vigneshrajendran',
       stats: 'Certified in Python and SQL, 5-star in Problem Solving',
       description: 'Earned certifications and top ratings by tackling a wide range of coding problems and participating in contests.',
@@ -29,7 +29,7 @@ export class CodingProfilesSectionComponent {
     },
     {
       platform: 'Kaggle',
-      icon: '/kaggle.png', // Updated to use the actual PNG image
+      icon: '/kaggle.png',
       url: 'https://www.kaggle.com/vignesh6r6r',
       stats: '2 bronze medals, participated in 8 competitions, contributor to datasets',
       description: 'Engaged in data science competitions, contributed datasets, and collaborated with the global data community.'
