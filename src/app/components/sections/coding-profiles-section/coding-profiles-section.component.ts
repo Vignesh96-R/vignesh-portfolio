@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 interface CodingProfile {
   platform: string;
-  icon: string; // SVG path or image
+  icon: string; 
   url: string;
   stats: string;
   description: string;
