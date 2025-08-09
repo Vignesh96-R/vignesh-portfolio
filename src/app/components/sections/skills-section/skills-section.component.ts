@@ -24,7 +24,7 @@ export class SkillsSectionComponent {
     {
       category: 'Libraries & Frameworks',
       icon: 'brain-circuit',
-      skills: ['NumPy', 'Pandas' ,'Scipy', 'Scikit-learn', 'TensorFlow (basic)', 'FastAPI'],
+      skills: ['NumPy', 'Pandas' ,'Scipy', 'Scikit-learn', 'TensorFlow (basic)', 'FastAPI', 'LangChain', 'LangSmith'],
     },
      {
       category: 'Visualization',

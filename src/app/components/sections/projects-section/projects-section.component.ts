@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 interface Project {
   title: string;
   description: string;
   technologies: string[];
   image: string;
-  link: string;
+  links: ProjectLink[];
   type: string;
-  status?: 'completed' | 'in-progress' | 'planned';
-  progress?: number; // 0-100 for progress bar
 }
 
 @Component({
@@ -20,17 +23,62 @@ interface Project {
   styleUrl: './projects-section.component.scss'
 })
 export class ProjectsSectionComponent {
-  selectedFilter: string = 'all'; // 'all', 'DS', '</>'
+  selectedFilter: string = 'DS'; // 'all', 'DS', '</>'
   
   allProjects: Project[] = [
-     {
+    {
+      title: 'RAG-based RBAC Chatbot for FinSolve Technologies',
+      description: 'Delivered secure, role-specific insights for Finance, Marketing, HR, Engineering, and C-Level teams, reducing communication delays and data silos.',
+      technologies: ['Python', 'FastAPI', 'RAG', 'Vector Store', 'LLM', 'Streamlit', 'RBAC', 'NLP'],
+      image: 'https://placehold.co/600x400',
+      type: 'DS',
+      links: [
+        { label: 'Challenge', url: 'https://codebasics.io/challenges/codebasics-gen-ai-data-science-resume-project-challenge/19' },
+        { label: 'Project', url: 'https://github.com/Vignesh96-R/finsolve-rag-chatbot' }
+      ]
+    },
+    {
+      title: 'Code2Crop - Tree Detection & Geotagging', //🏆 1st Place in Code2Crop AgriTech Challenge!
+      description: 'Developed an AI model to detect and geotag healthy Mosambi trees from drone imagery, enabling yield estimation, resource planning, and efficient farm management.',
+      technologies: ['Computer Vision', 'Deep Learning', 'Drone Imagery', 'Geotagging', 'Python', 'TensorFlow'],
+      image: 'https://placehold.co/600x400',
+      type: 'DS',
+      links: [
+        { label: 'Challenge', url: 'https://lu.ma/82dg57d0?tk=Vd1y2E' },
+        { label: 'Project', url: 'https://github.com/Vignesh96-R/code2crop' }
+      ]
+    },
+    {
+      title: 'Superstore Sales Analysis & Prediction',
+      description: 'Analyzed retail sales data to identify top-performing regions, products, and customer segments. Built an interactive Google Sheets dashboard and a regression model in Colab to predict sales and profit.',
+      technologies: ['Google Sheets', 'Python', 'Colab', 'Pandas', 'Scikit-learn'],
+      image: 'https://placehold.co/600x400',
+      type: 'DS',
+      links: [
+        { label: 'Dashboard', url: 'https://docs.google.com/spreadsheets/d/1WNkF3dOBJaBukJZ0ypfnozbrtGRLvNzOcudX0GShNnE/edit?gid=0#gid=0' },
+        { label: 'Project', url: 'https://github.com/Vignesh96-R/superstore_sales_prediction' }
+      ]
+    },
+    {
+      title: 'Crop Health Monitor',
+      description: 'Developed a CNN model trained on plant disease datasets and integrated it as a TensorFlow Lite (.tflite) model into an Android native app for real-time, offline disease detection.',
+      technologies: ['Tensorflow', 'CNN', 'Colab','Python' , 'Pandas', 'Android native', 'Jetpack compose', 'Kotlin'],
+      image: 'https://placehold.co/600x400',
+      type: 'DS',
+      links: [
+        { label: 'Dataset', url: 'https://www.kaggle.com/datasets/emmarex/plantdisease' },
+        { label: 'Project', url: 'https://github.com/Vignesh96-R/FarmCare' }
+      ]
+    },
+    {
       title: 'Portfolio Website',
       description: 'A modern single-page portfolio showcasing projects, skills, and experience with a clean, responsive design and smooth user interactions.',
       technologies: ['Angular', 'Tailwind CSS', 'TypeScript'],
       image: 'https://placehold.co/600x400',
       type: '</>',
-      link: 'https://github.com/Vignesh96-R/vignesh-portfolio',
-      status: 'completed'
+      links: [
+        { label: 'View Project', url: 'https://github.com/Vignesh96-R/vignesh-portfolio' }
+      ]
     },
     {
       title: 'File Management App',
@@ -38,8 +86,9 @@ export class ProjectsSectionComponent {
       technologies: ['Android Native', 'Jetpack', 'Kotlin', 'Firebase', 'SqlLite-Room'],
       image: 'https://placehold.co/600x400',
       type: '</>',
-      link: 'https://github.com/Vignesh96-R/CloudMediaBox',
-      status: 'completed'
+      links: [
+        { label: 'View Project', url: 'https://github.com/Vignesh96-R/CloudMediaBox' }
+      ]
     },
     {
       title: 'Stock Price Prediction with LSTM',
@@ -47,58 +96,44 @@ export class ProjectsSectionComponent {
       technologies: ['LSTM', 'Time-series', 'TensorFlow', 'Keras', 'Matplotlib'],
       image: 'https://placehold.co/600x400',
       type: 'DS',
-      link: 'https://github.com/Vignesh96-R/LSTM_predicition',
-      status: 'completed'
+      links: [
+        
+        { label: 'View Project', url: 'https://github.com/Vignesh96-R/LSTM_predicition' }
+      ]
     },
-    {
-    title: 'AI-Powered Chatbot with NLP',
-    description: 'Built an intelligent chatbot using transformers for intent classification and contextual understanding. Integrated with Rasa and Hugging Face models for accurate dialogue handling.',
-    technologies: ['BERT', 'GPT', 'Transformers', 'Rasa', 'Hugging Face'],
-    image: 'https://placehold.co/600x400',
-    type: 'DS',
-    link: 'https://github.com/Vignesh96-R/chatbot-nlp',
-    status: 'completed'
-  },
-  {
-    title: 'Real-Time Object Detection',
-    description: 'Implemented YOLOv5 with OpenCV to detect and track objects in real-time traffic and CCTV video feeds, achieving low-latency performance in live environments.',
-    technologies: ['YOLOv5', 'OpenCV', 'Python', 'Real-time Streaming'],
-    image: 'https://placehold.co/600x400',
-    type: 'DS',
-    link: 'https://github.com/Vignesh96-R/yolo-object-detection',
-    status: 'in-progress',
-    progress: 75
-  },
-  {
-    title: 'End-to-End ML Web App',
-    description: 'Developed a full-stack machine learning app with classification/regression capabilities, deployed using Streamlit and Docker on Azure for scalable access.',
-    technologies: ['Streamlit', 'FastAPI', 'Docker', 'Azure', 'Python'],
-    image: 'https://placehold.co/600x400',
-    type: 'DS',
-    link: 'https://github.com/Vignesh96-R/ml-web-app',
-    status: 'completed'
-  },
-    // {
-    //   title: 'E-commerce Analytics Dashboard',
-    //   description: 'A web application for visualizing sales data and predicting customer churn using machine learning.',
-    //   technologies: ['React', 'Next.js', 'Tailwind CSS', 'Scikit-learn', 'D3.js'],
-    //   image: 'https://placehold.co/600x400',
-    //   link: '#'
-    // },
-    // {
-    //   title: 'Real-time Chat Application',
-    //   description: 'A full-stack chat application with end-to-end encryption and real-time messaging capabilities.',
-    //   technologies: ['Node.js', 'Express', 'Socket.IO', 'React', 'MongoDB'],
-    //   image: 'https://placehold.co/600x400',
-    //   link: '#'
-    // },
-    // {
-    //   title: 'Portfolio Website Builder',
-    //   description: 'A CMS-like platform for users to create and deploy their own professional portfolio websites with ease.',
-    //   technologies: ['Vue.js', 'Nuxt.js', 'Firebase', 'Stripe API'],
-    //   image: 'https://placehold.co/600x400',
-    //   link: '#'
-    // }
+  //   {
+  //   title: 'AI-Powered Chatbot with NLP',
+  //   description: 'Built an intelligent chatbot using transformers for intent classification and contextual understanding. Integrated with Rasa and Hugging Face models for accurate dialogue handling.',
+  //   technologies: ['BERT', 'GPT', 'Transformers', 'Rasa', 'Hugging Face'],
+  //   image: 'https://placehold.co/600x400',
+  //   type: 'DS',
+  //   links: [
+  //     { label: 'Try Chatbot', url: '#' },
+  //     { label: 'GitHub', url: 'https://github.com/Vignesh96-R/chatbot-nlp' }
+  //   ]
+  // },
+  // {
+  //   title: 'Real-Time Object Detection',
+  //   description: 'Implemented YOLOv5 with OpenCV to detect and track objects in real-time traffic and CCTV video feeds, achieving low-latency performance in live environments.',
+  //   technologies: ['YOLOv5', 'OpenCV', 'Python', 'Real-time Streaming'],
+  //   image: 'https://placehold.co/600x400',
+  //   type: 'DS',
+  //   links: [
+  //     { label: 'View Demo', url: '#' },
+  //     { label: 'GitHub', url: 'https://github.com/Vignesh96-R/yolo-object-detection' }
+  //   ]
+  // },
+  // {
+  //   title: 'End-to-End ML Web App',
+  //   description: 'Developed a full-stack machine learning app with classification/regression capabilities, deployed using Streamlit and Docker on Azure for scalable access.',
+  //   technologies: ['Streamlit', 'FastAPI', 'Docker', 'Azure', 'Python'],
+  //   image: 'https://placehold.co/600x400',
+  //   type: 'DS',
+  //   links: [
+  //     { label: 'Live App', url: '#' },
+  //     { label: 'GitHub', url: 'https://github.com/Vignesh96-R/ml-web-app' }
+  //   ]
+  // },
   ];
 
   get projects(): Project[] {
@@ -112,26 +147,28 @@ export class ProjectsSectionComponent {
     this.selectedFilter = filter;
   }
 
-  getStatusColor(status: string): string {
-    switch (status) {
-      case 'completed': return 'bg-green-100 text-green-800';
-      case 'in-progress': return 'bg-yellow-100 text-yellow-800';
-      case 'planned': return 'bg-blue-100 text-blue-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  }
-
-  getStatusIcon(status: string): string {
-    switch (status) {
-      case 'completed': return 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z';
-      case 'in-progress': return 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z';
-      case 'planned': return 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z';
-      default: return 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z';
-    }
-  }
-
   getExternalLinkIcon(): string {
     // External link icon SVG path
     return 'M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h3v3m-11 8 9-9';
+  }
+
+  getLinkIcon(linkType: string): string {
+    switch (linkType) {
+      case 'github': return 'M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z';
+      case 'demo': return 'M15 12a3 3 0 11-6 0 3 3 0 016 0z';
+      case 'live': return 'M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14';
+      case 'documentation': return 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z';
+      default: return 'M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h3v3m-11 8 9-9';
+    }
+  }
+
+  getButtonClass(linkType: string): string {
+    switch (linkType) {
+      case 'github': return 'bg-gray-900 hover:bg-gray-800 text-white';
+      case 'demo': return 'bg-blue-600 hover:bg-blue-700 text-white';
+      case 'live': return 'bg-green-600 hover:bg-green-700 text-white';
+      case 'documentation': return 'bg-purple-600 hover:bg-purple-700 text-white';
+      default: return 'bg-gray-100 hover:bg-gray-200 text-gray-900';
+    }
   }
 }
