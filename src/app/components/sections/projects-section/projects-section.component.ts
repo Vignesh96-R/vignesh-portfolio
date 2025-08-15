@@ -33,30 +33,8 @@ export class ProjectsSectionComponent {
       image: 'https://placehold.co/600x400',
       type: 'DS',
       links: [
-        { label: 'Challenge', url: 'https://codebasics.io/challenges/codebasics-gen-ai-data-science-resume-project-challenge/19' },
-        { label: 'Project', url: 'https://github.com/Vignesh96-R/finsolve-rag-chatbot' }
-      ]
-    },
-    {
-      title: 'Code2Crop - Tree Detection & Geotagging', //🏆 1st Place in Code2Crop AgriTech Challenge!
-      description: 'Developed an AI model to detect and geotag healthy Mosambi trees from drone imagery, enabling yield estimation, resource planning, and efficient farm management.',
-      technologies: ['Computer Vision', 'Deep Learning', 'Drone Imagery', 'Geotagging', 'Python', 'TensorFlow'],
-      image: 'https://placehold.co/600x400',
-      type: 'DS',
-      links: [
-        { label: 'Challenge', url: 'https://lu.ma/82dg57d0?tk=Vd1y2E' },
-        { label: 'Project', url: 'https://github.com/Vignesh96-R/code2crop' }
-      ]
-    },
-    {
-      title: 'Superstore Sales Analysis & Prediction',
-      description: 'Analyzed retail sales data to identify top-performing regions, products, and customer segments. Built an interactive Google Sheets dashboard and a regression model in Colab to predict sales and profit.',
-      technologies: ['Google Sheets', 'Python', 'Colab', 'Pandas', 'Scikit-learn'],
-      image: 'https://placehold.co/600x400',
-      type: 'DS',
-      links: [
-        { label: 'Dashboard', url: 'https://docs.google.com/spreadsheets/d/1WNkF3dOBJaBukJZ0ypfnozbrtGRLvNzOcudX0GShNnE/edit?gid=0#gid=0' },
-        { label: 'Project', url: 'https://github.com/Vignesh96-R/superstore_sales_prediction' }
+        { label: 'Demo Video', url: 'https://github.com/Vignesh96-R/agricTech_chatbot_rag_llm/tree/main/demo_video' },
+        { label: 'Project', url: 'https://github.com/Vignesh96-R/agricTech_chatbot_rag_llm' }
       ]
     },
     {
@@ -66,10 +44,62 @@ export class ProjectsSectionComponent {
       image: 'https://placehold.co/600x400',
       type: 'DS',
       links: [
-        { label: 'Dataset', url: 'https://www.kaggle.com/datasets/emmarex/plantdisease' },
+        { label: 'CNN Model', url: 'https://colab.research.google.com/drive/1MsvyQ7AUeSfonc0GQEn1KfxlPhLWZiBu?usp=sharing' },
         { label: 'Project', url: 'https://github.com/Vignesh96-R/FarmCare' }
       ]
     },
+    // {
+    //   title: 'Code2Crop - Tree Detection & Geotagging', //🏆 1st Place in Code2Crop AgriTech Challenge!
+    //   description: 'Developed an AI model to detect and geotag healthy Mosambi trees from drone imagery, enabling yield estimation, resource planning, and efficient farm management.',
+    //   technologies: ['Computer Vision', 'Deep Learning', 'Drone Imagery', 'Geotagging', 'Python', 'TensorFlow'],
+    //   image: 'https://placehold.co/600x400',
+    //   type: 'DS',
+    //   links: [
+    //     { label: 'Challenge', url: 'https://lu.ma/82dg57d0?tk=Vd1y2E' },
+    //     { label: 'Project', url: 'https://github.com/Vignesh96-R/code2crop' }
+    //   ]
+    // },
+    // {
+    //   title: 'Superstore Sales Analysis & Prediction',
+    //   description: 'Analyzed retail sales data to identify top-performing regions, products, and customer segments. Built an interactive Google Sheets dashboard and a regression model in Colab to predict sales and profit.',
+    //   technologies: ['Google Sheets', 'Python', 'Colab', 'Pandas', 'Scikit-learn'],
+    //   image: 'https://placehold.co/600x400',
+    //   type: 'DS',
+    //   links: [
+    //     { label: 'Dashboard', url: 'https://docs.google.com/spreadsheets/d/1WNkF3dOBJaBukJZ0ypfnozbrtGRLvNzOcudX0GShNnE/edit?gid=0#gid=0' },
+    //     { label: 'Project', url: 'https://github.com/Vignesh96-R/superstore_sales_prediction' }
+    //   ]
+    // },
+    {
+  title: 'Netflix Movie Recommendation System',
+  description: 'Built a machine learning-based recommendation engine using collaborative filtering and content-based filtering on the Netflix Prize dataset to provide personalized movie suggestions for users.',
+  technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Surprise', 'Matplotlib', 'Seaborn', 'Flask', 'Heroku'],
+  image: 'https://placehold.co/600x400',
+  type: 'DS',
+  links: [
+    { label: 'Colab Link', url: '' },
+  ]
+},
+{
+  title: 'Covid-19 Case Prediction',
+  description: 'Developed a time-series forecasting model using ARIMA, Prophet, and LSTM to predict daily Covid-19 case counts across regions, aiding public health decision-making.',
+  technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'ARIMA', 'Facebook Prophet', 'LSTM', 'Matplotlib', 'Plotly'],
+  image: 'https://placehold.co/600x400',
+  type: 'DS',
+  links: [
+    { label: 'Colab Link', url: '' },
+  ]
+},
+{
+  title: 'Walmart Sales Forecasting',
+  description: 'Created a predictive analytics model using Random Forest, XGBoost, and Prophet to forecast Walmart store sales for better inventory and supply chain planning.',
+  technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'XGBoost', 'Random Forest', 'Prophet', 'Matplotlib', 'Seaborn'],
+  image: 'https://placehold.co/600x400',
+  type: 'DS',
+  links: [
+    { label: 'Colab Link', url: '' },
+  ]
+},  
     {
       title: 'Portfolio Website',
       description: 'A modern single-page portfolio showcasing projects, skills, and experience with a clean, responsive design and smooth user interactions.',
@@ -90,17 +120,17 @@ export class ProjectsSectionComponent {
         { label: 'View Project', url: 'https://github.com/Vignesh96-R/CloudMediaBox' }
       ]
     },
-    {
-      title: 'Stock Price Prediction with LSTM',
-      description: 'A deep learning model that analyzes historical stock data to predict future market trends using sequential pattern recognition.',
-      technologies: ['LSTM', 'Time-series', 'TensorFlow', 'Keras', 'Matplotlib'],
-      image: 'https://placehold.co/600x400',
-      type: 'DS',
-      links: [
+    // {
+    //   title: 'Stock Price Prediction with LSTM',
+    //   description: 'A deep learning model that analyzes historical stock data to predict future market trends using sequential pattern recognition.',
+    //   technologies: ['LSTM', 'Time-series', 'TensorFlow', 'Keras', 'Matplotlib'],
+    //   image: 'https://placehold.co/600x400',
+    //   type: 'DS',
+    //   links: [
         
-        { label: 'View Project', url: 'https://github.com/Vignesh96-R/LSTM_predicition' }
-      ]
-    },
+    //     { label: 'View Project', url: 'https://github.com/Vignesh96-R/LSTM_predicition' }
+    //   ]
+    // },
   //   {
   //   title: 'AI-Powered Chatbot with NLP',
   //   description: 'Built an intelligent chatbot using transformers for intent classification and contextual understanding. Integrated with Rasa and Hugging Face models for accurate dialogue handling.',
