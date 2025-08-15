@@ -77,7 +77,7 @@ export class ProjectsSectionComponent {
   image: 'https://placehold.co/600x400',
   type: 'DS',
   links: [
-    { label: 'Colab Link', url: '' },
+    { label: 'View ML Project', url: 'https://github.com/Vignesh96-R/ML_Project/tree/main/Netflix_Movie_Recommendation_System' },
   ]
 },
 {
@@ -87,7 +87,7 @@ export class ProjectsSectionComponent {
   image: 'https://placehold.co/600x400',
   type: 'DS',
   links: [
-    { label: 'Colab Link', url: '' },
+    { label: 'View ML Project', url: 'https://github.com/Vignesh96-R/ML_Project/tree/main/Covid-19_Case_Prediction' },
   ]
 },
 {
@@ -97,7 +97,7 @@ export class ProjectsSectionComponent {
   image: 'https://placehold.co/600x400',
   type: 'DS',
   links: [
-    { label: 'Colab Link', url: '' },
+    { label: 'View ML Project', url: 'https://github.com/Vignesh96-R/ML_Project/tree/main/Walmart_Sales_Forecasting' },
   ]
 },  
     {
