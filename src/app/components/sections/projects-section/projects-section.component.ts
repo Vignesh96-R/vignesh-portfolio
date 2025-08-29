@@ -26,9 +26,9 @@ export class ProjectsSectionComponent {
   selectedFilter: string = 'DS'; // 'all', 'DS', '</>'
   
   allProjects: Project[] = [
-    {
-      title: 'RAG-based RBAC Chatbot for FinSolve Technologies',
-      description: 'Delivered secure, role-specific insights for Finance, Marketing, HR, Engineering, and C-Level teams, reducing communication delays and data silos.',
+      {
+      title: 'RAG-based RBAC Chatbot for AgriTech',
+      description: 'Delivered secure, role-specific insights for Admins, Farmers, Field Managers, HR, and other agricultural stakeholders, reducing communication delays and eliminating information silos across farm operations.',
       technologies: ['Python', 'FastAPI', 'RAG', 'Vector Store', 'LLM', 'Streamlit', 'RBAC', 'NLP'],
       image: 'https://placehold.co/600x400',
       type: 'DS',
