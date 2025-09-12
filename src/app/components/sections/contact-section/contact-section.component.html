@@ -1,0 +1,25 @@
+<section id="contact" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-headline font-bold text-center mb-12">Contact Me</h2>
+    <div class="flex flex-col md:flex-row gap-8 justify-center mb-12">
+      <div *ngFor="let card of contactCards" class="flex-1 min-w-[280px] max-w-md bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+        <div class="flex items-center mb-4">
+          <svg class="w-7 h-7 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="getIconPath(card.icon)"></path>
+          </svg>
+          <span class="text-xl font-bold">{{ card.title }}</span>
+        </div>
+        <div class="text-gray-500 mb-2">{{ card.description }}</div>
+        <a [href]="card.link" [ngClass]="card.valueClass" class="break-all text-base font-medium hover:underline">{{ card.value }}</a>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <div class="text-lg font-bold mb-4">Connect with me on social media</div>
+      <div class="flex justify-center gap-4">
+        <a *ngFor="let social of socialLinks" [href]="social.link" target="_blank" rel="noopener" [ngClass]="[social.bgColor, 'inline-flex items-center justify-center w-10 h-10 rounded-md hover:opacity-80 transition']">
+          <img [src]="social.svgPath" [alt]="social.label" class="w-6 h-6 object-contain" [title]="social.label" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section id="coding-profiles" class="py-16 md:py-24 bg-card">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-headline font-bold text-center mb-12">Coding & Competition Profiles</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let profile of profiles" class="rounded-xl bg-white shadow p-6 flex flex-col items-start text-left hover:shadow-lg transition-all duration-300">
+        <div class="flex items-center w-full mb-2">
+          <img [src]="profile.icon" [alt]="profile.platform + ' icon'" class="w-8 h-8 mr-3 object-contain" *ngIf="profile.icon">
+          <h3 class="font-headline text-xl font-semibold">{{ profile.platform }}</h3>
+        </div>
+        <!-- <div class="text-green-700 font-medium mb-2">{{ profile.stats }}</div> -->
+        <p class="text-muted-foreground mb-4">{{ profile.description }}</p>
+             <div *ngIf="profile.chips" class="flex flex-wrap gap-2 mb-2">
+          <span *ngFor="let chip of profile.chips" class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+            {{ chip }}
+          </span>
+        </div>
+        <a [href]="profile.url" target="_blank" rel="noopener"
+           class="mt-auto w-full inline-flex items-center justify-center rounded-lg transition text-gray-900 font-medium py-3 px-4 text-base bg-gray-100 hover:bg-gray-200">
+          View Profile
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section> 

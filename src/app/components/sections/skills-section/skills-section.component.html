@@ -1,0 +1,69 @@
+<section id="skills" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-headline font-bold text-center mb-12">Technical Skills</h2>
+
+    <div>
+      <h3 class="text-xl font-headline font-bold text-center mb-8">Full Stack Developer</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let category of developerSkills"
+          class="border-none shadow-lg hover:shadow-primary/20 transition-shadow rounded-lg border bg-card text-card-foreground">
+          <div class="flex flex-col space-y-1.5 p-6">
+            <h3 class="flex items-center gap-3 font-headline text-xl font-semibold leading-none tracking-tight">
+              <svg *ngIf="category.icon !== 'ui_ux'" class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  [attr.d]="getIconPath(category.icon)"></path>
+              </svg>
+              <img *ngIf="category.icon === 'ui_ux'" src="/svg/ui_ux/ui_ux.svg" alt="Machine Learning Icon"
+                class="w-6 h-6" />
+
+              <span>{{ category.category }}</span>
+            </h3>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-2">
+              <span *ngFor="let skill of category.skills"
+                class="inline-flex items-center rounded-md bg-green-200 px-2.5 py-0.5 text-xs font-medium text-green-800">
+                {{ skill }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="mb-16">
+      <h3 class="text-xl font-headline font-bold text-center mb-8 mt-8">Data Science</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let category of dataScienceSkills"
+          class="border-none shadow-lg hover:shadow-primary/20 transition-shadow rounded-lg border bg-card text-card-foreground">
+          <div class="flex flex-col space-y-1.5 p-6">
+            <h3 class="flex items-center gap-3 font-headline text-xl font-semibold leading-none tracking-tight">
+
+              <svg *ngIf="category.icon !== 'bot'" class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  [attr.d]="getIconPath(category.icon)"></path>
+              </svg>
+              <img *ngIf="category.icon === 'bot'" src="/svg/ml.svg" alt="Machine Learning Icon" class="w-6 h-6" />
+
+              <span>{{ category.category }}</span>
+            </h3>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-2">
+              <span *ngFor="let skill of category.skills"
+                class="inline-flex items-center rounded-md bg-green-200 px-2.5 py-0.5 text-xs font-medium text-green-800">
+                {{ skill }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>

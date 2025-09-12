@@ -1,0 +1,24 @@
+// Add custom styles for coding-profiles-section here if needed 
+
+.coding-profile-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.75rem;
+  object-fit: contain;
+}
+
+.coding-profile-btn {
+  @apply mt-auto w-full inline-flex items-center justify-center rounded-lg transition text-gray-900 font-medium py-3 px-4 text-base bg-gray-100 hover:bg-gray-200;
+}
+
+.coding-profile-title-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.coding-profile-content {
+  text-align: left;
+  align-items: flex-start;
+} 

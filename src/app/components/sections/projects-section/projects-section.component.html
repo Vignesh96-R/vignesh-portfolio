@@ -1,0 +1,75 @@
+<section id="projects" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <!-- Title centered at top -->
+    <h2 class="text-3xl font-headline font-bold text-center mb-12">Projects</h2>
+    
+    <!-- Filter Buttons positioned at right side -->
+    <div class="flex justify-end mb-8">
+      <div class="flex gap-3">
+        <button 
+          (click)="filterProjects('all')" 
+          [class]="selectedFilter === 'all' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+          class="px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm">
+          All Projects
+        </button>
+        <button 
+          (click)="filterProjects('DS')" 
+          [class]="selectedFilter === 'DS' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+          class="px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm flex items-center gap-2">
+          <img src="/favicon.png" alt="Data Science" class="h-4 w-4 object-contain" />
+          Data Science
+        </button>
+        <button 
+          (click)="filterProjects('</>')" 
+          [class]="selectedFilter === '</>' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+          class="px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm flex items-center gap-2">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+          Software Dev
+        </button>
+      </div>
+    </div>
+    
+    <!-- Project Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Superstore Project Card with two buttons styled like other project buttons -->
+      <div *ngFor="let project of projects" class="rounded-xl bg-white shadow p-0 flex flex-col overflow-hidden relative group hover:shadow-lg transition-all duration-300">
+        <!-- Project Type Icon -->
+        <div class="absolute top-1.5 right-4 z-10">
+          <!-- Show header SVG icon for </> type projects -->
+          <svg *ngIf="project.type === '</>'" class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+          <!-- Show favicon for DS type projects -->
+          <img *ngIf="project.type === 'DS'" src="/favicon.png" alt="Data Science" class="h-6 w-6 object-contain" title="Data Science Project" />
+        </div>
+
+        <div class="flex-1 flex flex-col p-6">
+          <div class="text-lg font-bold mb-1 flex items-center">
+            {{ project.title }}
+          </div>
+          <div class="text-gray-500 mb-4">{{ project.description }}</div>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span *ngFor="let tech of project.technologies" class="inline-flex items-center rounded-md bg-green-200 px-2.5 py-0.5 text-xs font-medium text-green-800">{{ tech }}</span>
+          </div>
+          
+          <!-- Dynamic Buttons Section -->
+          <div class="mt-auto flex gap-2">
+            <a *ngFor="let link of project.links" 
+               [href]="link.url" 
+               target="_blank" 
+               rel="noopener" 
+               class="flex-1 inline-flex items-center justify-center rounded-lg transition text-gray-900 font-medium py-3 px-4 text-base bg-gray-100 hover:bg-gray-200">
+              <span>{{ link.label }}</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="getExternalLinkIcon()"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
