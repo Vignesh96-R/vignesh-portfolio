@@ -101,7 +101,7 @@ export class SkillsSectionComponent {
       category: 'Testing',
       icon: 'testing',
       // skills: ['JUnit', "Cypress", "Postman", "JMeter", "Appium", "SonarQube", "OWASP ZAP", "Percy"],
-      skills: ['JUnit',  "Postman", "SonarQube"],
+      skills: ['JUnit',  "Postman"],
     },
   ];
 

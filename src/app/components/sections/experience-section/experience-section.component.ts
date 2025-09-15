@@ -23,7 +23,7 @@ export class ExperienceSectionComponent {
       company: 'ABC',
       period: 'Sep 2024 - Aug 2025',
       details: 'Designed and built a PG Management System (MERN).\n Implemented tenant onboarding, room allocation, and vacancy management.\n Added fee invoicing, payment tracking, fines, and refunds workflows.\n Built complaint management with status tracking and admin SLAs.\n Implemented role-based access for Admin, Manager, Staff, and Tenant.\n Integrated JWT auth, validations, and secure APIs with Node.js & Express.',
-      skills: [  'React Native', 'Tailwind',  'Node.js',   'Express.js',   'MongoDB',  'JavaScript',   'TypeScript',     'GraphQL',    'Git',   'CI/CD',   'Jest',   'Mocha',    'Firebase']
+      skills: [  'React Native', 'Tailwind',  'Node.js',   'Express.js',   'MongoDB',  'JavaScript',   'TypeScript',     'GraphQL',    'Git',   'CI/CD',  'Firebase']
 
     },
     {
